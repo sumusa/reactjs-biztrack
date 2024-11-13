@@ -1,6 +1,6 @@
-# Maya Inc. Admin Dashboard
+# BizTrack
 
-A modern, responsive admin dashboard built with React, Tailwind CSS, and Lucide Icons. This application provides a clean interface for managing e-commerce operations.
+A modern, responsive small business management app built with React, Tailwind CSS, and Lucide Icons. This application provides a clean interface for managing e-commerce operations.
 
 ## Features
 
