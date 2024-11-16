@@ -36,17 +36,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
       {/* Sidebar */}
       <aside
-        className={`bg-gray-800 text-white h-screen transition-all duration-300 fixed left-0 top-0 flex flex-col
+        className={`bg-surface-dark text-surface h-screen fixed left-0 top-0 flex flex-col
           ${
             isCollapsed
               ? "w-0 lg:w-20 -translate-x-full lg:translate-x-0"
-              : "w-64 translate-x-0"
+              : "w-56 translate-x-0"
           }
           z-50 lg:z-auto p-6`}
       >
         {/* Close button for mobile */}
         <button
-          className="absolute top-4 right-4 text-gray-400 hover:text-white lg:hidden"
+          className="absolute top-4 right-4 text-primary-light hover:text-surface lg:hidden"
           onClick={() => setIsCollapsed(true)}
         >
           <X size={24} />
@@ -54,14 +54,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
         <div className="flex items-center justify-center mb-6">
           {isCollapsed ? (
-            <Logo className="w-8 h-8 text-blue-400" />
+            <Logo className="w-8 h-8 text-primary" />
           ) : (
-            <div className="flex items-center space-x-2">
-              <Logo className="w-8 h-8 text-blue-400" />
-              <h2 className="text-2xl font-bold">Maya Inc.</h2>
+            <div className="flex items-center space-x-4">
+              <Logo className="w-8 h-8 text-primary" />
+              <h2 className="text-2xl font-bold text-surface-light">
+                Maya Inc.
+              </h2>
             </div>
           )}
         </div>
+
         <nav className="flex-1">
           <ul className="space-y-4">
             <li>
@@ -69,18 +72,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                } hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Home size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Dashboard
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Home size={18} className="flex-shrink-0" />
+                  <span className={`${isCollapsed ? "hidden" : "block"}`}>
+                    Dashboard
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -88,18 +93,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/products"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                } hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/products") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/products")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <ShoppingCart size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Products
-                </span>
+                <div className="flex items-center space-x-4">
+                  <ShoppingCart size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Products
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -107,18 +114,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/orders"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/orders") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/orders")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Package size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Orders
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Package size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Orders
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -126,18 +135,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/customers"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/customers") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/customers")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Users size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Customers
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Users size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Customers
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -145,18 +156,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/notes"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/notes") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/notes")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Clipboard size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Notes
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Clipboard size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Notes
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -164,23 +177,25 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/expenses"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/expenses") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/expenses")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Wallet size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Expenses
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Wallet size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Expenses
+                  </span>
+                </div>
               </Link>
             </li>
-            <div className="mt-16 mb-4 border-t border-gray-700" />
+            <div className="mt-16 mb-4 border-t border-black/20" />
             {!isCollapsed && (
-              <div className="px-2 mb-4 text-xs text-gray-400 uppercase">
+              <div className="px-2 mb-4 text-xs text-primary-light uppercase">
                 Support & Settings
               </div>
             )}
@@ -190,18 +205,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/help"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/help") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/help")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <HelpCircle size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Help
-                </span>
+                <div className="flex items-center space-x-4">
+                  <HelpCircle size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Help
+                  </span>
+                </div>
               </Link>
             </li>
 
@@ -210,18 +227,20 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/contact"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/contact") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/contact")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Mail size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Contact
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Mail size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Contact
+                  </span>
+                </div>
               </Link>
             </li>
             <li>
@@ -229,39 +248,44 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 to="/settings"
                 className={`flex items-center ${
                   isCollapsed ? "" : "space-x-4"
-                } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+                }  hover:bg-primary/25 p-2 rounded text-lg ${
                   isCollapsed ? "justify-center" : "justify-start"
-                } ${isActive("/settings") ? "bg-gray-700 text-blue-400" : ""}`}
+                } ${
+                  isActive("/settings")
+                    ? "bg-black/20 text-primary"
+                    : "text-surface-light"
+                } transition-all duration-150`}
               >
-                <Settings size={18} className="flex-shrink-0" />
-                <span
-                  className={`transition-all duration-300 ${
-                    isCollapsed ? "hidden" : "block"
-                  }`}
-                >
-                  Settings
-                </span>
+                <div className="flex items-center space-x-4">
+                  <Settings size={18} className="flex-shrink-0" />
+                  <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                    Settings
+                  </span>
+                </div>
               </Link>
             </li>
           </ul>
         </nav>
-        <div className="pt-6 border-t border-gray-700">
+
+        <div className="pt-6 border-t border-black/20">
           <Link
             to="/logout"
             className={`flex items-center ${
               isCollapsed ? "" : "space-x-4"
-            } transition-all duration-300 hover:bg-gray-700 p-2 rounded text-lg ${
+            }  hover:bg-primary/25 p-2 rounded text-lg ${
               isCollapsed ? "justify-center" : "justify-start"
-            }`}
+            } ${
+              isActive("/logout")
+                ? "bg-black/20 text-primary"
+                : "text-surface-light"
+            } transition-all duration-150`}
           >
-            <LogOut size={18} className="flex-shrink-0" />
-            <span
-              className={`transition-all duration-300 ${
-                isCollapsed ? "hidden" : "block"
-              }`}
-            >
-              Logout
-            </span>
+            <div className="flex items-center space-x-4">
+              <LogOut size={18} className="flex-shrink-0" />
+              <span className={` ${isCollapsed ? "hidden" : "block"}`}>
+                Logout
+              </span>
+            </div>
           </Link>
         </div>
       </aside>
